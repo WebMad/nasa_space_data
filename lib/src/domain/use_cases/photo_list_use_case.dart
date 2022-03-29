@@ -10,17 +10,19 @@ class PhotoListUseCase extends UseCase<List<PhotoEntity>, PhotoListParams> {
 
   @override
   Future<List<PhotoEntity>> call(PhotoListParams params) async {
-    return await _photoRepository.photoList(params.earthDate,
+    return await _photoRepository.photoList(params.earthDate, params.rover,
         camera: params.camera ?? "all", page: params.page ?? 1);
   }
 }
 
 class PhotoListParams extends Equatable {
   final DateTime earthDate;
+  final String rover;
   final String? camera;
   final int? page;
 
-  const PhotoListParams({required this.earthDate, this.camera, this.page});
+  const PhotoListParams(
+      {required this.earthDate, required this.rover, this.camera, this.page});
 
   @override
   List<Object?> get props => [earthDate, camera, page];
