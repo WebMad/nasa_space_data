@@ -8,7 +8,7 @@ enum RoverStatus {
 
 class RoverEntity extends Equatable {
   final int id;
-  final int name;
+  final String name;
   final int totalPhotos;
   final DateTime landingDate;
   final DateTime launchDate;

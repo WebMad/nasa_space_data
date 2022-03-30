@@ -40,7 +40,7 @@ class NasaRemoteDataSourceImpl extends NasaRemoteDataSource {
         "mars-photos/api/v1/rovers?api_key=${dotenv.env["NASA_API_KEY"]}"));
 
     if (response.statusCode == 200) {
-      return (jsonDecode(response.body)["rovers"] as List<Map<String, dynamic>>)
+      return (jsonDecode(response.body)["rovers"] as List<dynamic>)
           .map((e) => RoverModel.fromJson(e))
           .toList();
     }

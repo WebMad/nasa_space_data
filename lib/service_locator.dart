@@ -20,5 +20,5 @@ init() {
   sl.registerLazySingleton<PhotoListUseCase>(() => PhotoListUseCase(sl()));
   sl.registerLazySingleton<RoverListUseCase>(() => RoverListUseCase(sl()));
 
-  sl.registerLazySingleton(() => http.Client);
+  sl.registerLazySingleton(() => http.Client());
 }

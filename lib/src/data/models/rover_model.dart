@@ -5,7 +5,7 @@ import 'package:nasa_space_data/src/domain/entities/rover_entity.dart';
 class RoverModel extends RoverEntity {
   const RoverModel(
       {required int id,
-      required int name,
+      required String name,
       required DateTime landingDate,
       required DateTime launchDate,
       required RoverStatus status,
@@ -33,7 +33,7 @@ class RoverModel extends RoverEntity {
             : RoverStatus.active,
         totalPhotos: json["total_photos"],
         maxDate: DateTime.parse(json["max_date"]),
-        cameras: (json["cameras"] as List<Map<String, dynamic>>)
+        cameras: (json["cameras"] as List<dynamic>)
             .map((e) => CameraModel.fromJson(e))
             .toList());
   }
