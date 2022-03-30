@@ -9,9 +9,9 @@ class RoverModel extends RoverEntity {
       required DateTime landingDate,
       required DateTime launchDate,
       required RoverStatus status,
-      required int totalPhotos,
-      required DateTime maxDate,
-      required List<CameraEntity> cameras})
+      required int? totalPhotos,
+      required DateTime? maxDate,
+      required List<CameraEntity>? cameras})
       : super(
             id: id,
             name: name,
@@ -32,9 +32,10 @@ class RoverModel extends RoverEntity {
             ? RoverStatus.complete
             : RoverStatus.active,
         totalPhotos: json["total_photos"],
-        maxDate: DateTime.parse(json["max_date"]),
-        cameras: (json["cameras"] as List<dynamic>)
+        maxDate:
+            json["max_date"] != null ? DateTime.parse(json["max_date"]) : null,
+        cameras: json["cameras"] != null ? (json["cameras"] as List<dynamic>)
             .map((e) => CameraModel.fromJson(e))
-            .toList());
+            .toList() : null);
   }
 }

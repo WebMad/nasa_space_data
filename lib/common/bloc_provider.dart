@@ -3,10 +3,10 @@ import 'package:nasa_space_data/common/bloc_base.dart';
 
 class BlocProvider<T extends BlocBase> extends StatefulWidget {
   final Widget child;
-  final T bloc;
+  late final T bloc;
 
-  const BlocProvider({Key? key, required this.child, required this.bloc})
-      : super(key: key);
+  BlocProvider({Key? key, required this.child, bloc})
+      : bloc = bloc(), super(key: key);
 
   @override
   State<BlocProvider> createState() => _BlocProviderState();

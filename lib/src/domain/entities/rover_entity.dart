@@ -9,12 +9,12 @@ enum RoverStatus {
 class RoverEntity extends Equatable {
   final int id;
   final String name;
-  final int totalPhotos;
+  final int? totalPhotos;
   final DateTime landingDate;
   final DateTime launchDate;
-  final DateTime maxDate;
+  final DateTime? maxDate;
   final RoverStatus status;
-  final List<CameraEntity> cameras;
+  final List<CameraEntity>? cameras;
 
   const RoverEntity({
     required this.id,

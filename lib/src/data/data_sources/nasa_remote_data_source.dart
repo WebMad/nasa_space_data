@@ -27,7 +27,7 @@ class NasaRemoteDataSourceImpl extends NasaRemoteDataSource {
             "${earthDate.month}-${earthDate.day}&camera=$camera&page=$page"));
 
     if (response.statusCode == 200) {
-      return (jsonDecode(response.body)["photos"] as List<Map<String, dynamic>>)
+      return (jsonDecode(response.body)["photos"] as List<dynamic>)
           .map((e) => PhotoModel.fromJson(e))
           .toList();
     }
