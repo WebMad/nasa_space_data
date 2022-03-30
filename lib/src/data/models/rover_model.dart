@@ -11,7 +11,7 @@ class RoverModel extends RoverEntity {
       required RoverStatus status,
       required int? totalPhotos,
       required DateTime? maxDate,
-      required List<CameraEntity>? cameras})
+      required List<CameraModel>? cameras})
       : super(
             id: id,
             name: name,

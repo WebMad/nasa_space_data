@@ -8,10 +8,10 @@ class PhotoModel extends PhotoEntity {
   const PhotoModel(
       {required int id,
       required int sol,
-      required CameraEntity camera,
+      required CameraModel camera,
       required String imgSrc,
       required DateTime earthDate,
-      required RoverEntity rover})
+      required RoverModel rover})
       : super(
             id: id,
             sol: sol,
