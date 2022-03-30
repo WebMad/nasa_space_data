@@ -15,7 +15,7 @@ class RoverBloc extends BlocBase<RoverState, RoverEvent> {
     try {
       emit(RoverLoadedState(
           await sl<RoverListUseCase>().call(RoverListParams())));
-    } on RequestException {
+    } on Exception {
       emit(RoverLoadErrorState("Ошибка запроса"));
     }
   }

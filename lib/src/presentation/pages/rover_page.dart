@@ -25,6 +25,8 @@ class RoverPage extends StatelessWidget {
                   var data = snapshot.data;
                   if (data is RoverLoadState) {
                     return const CircularProgressIndicator();
+                  } else if (data is RoverLoadErrorState) {
+                    return Text(data.msg);
                   } else if (data is RoverLoadedState) {
                     return ListView(
                       shrinkWrap: true,
