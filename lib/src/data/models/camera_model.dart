@@ -1,4 +1,3 @@
-import 'package:nasa_space_data/common/model.dart';
 import 'package:nasa_space_data/src/domain/entities/camera_entity.dart';
 
 class CameraModel extends CameraEntity {
